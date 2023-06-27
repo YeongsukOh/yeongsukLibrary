@@ -4,8 +4,9 @@ import maya.cmds as cmds
 
 
 # need some comment here
-class ContraintSelection():
+class ConstraintList():
 
+    '''
     # Question! : where can I set up this script??
     sel = cmds.ls(sl = True)
     num = int(len(sel)/2)
@@ -21,7 +22,7 @@ class ContraintSelection():
         print(driver, driven)    
     # how can I add the common attribute for maintain offset
 
-    '''
+
     # need some comment here
     def parentConstraint(self, maintainOffset):
 
