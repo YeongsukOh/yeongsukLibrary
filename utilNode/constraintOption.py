@@ -7,7 +7,7 @@ def setList():
             number = int(len(selectionList)/2)
             driver = selectionList[:number]
             driven = selectionList[number:]
-            return driver, driven
+            return number, driver, driven
         else:
             raise Exception("select one more items")
     else:
@@ -16,33 +16,41 @@ def setList():
 
 # these are option for type of constraint
 def parentConst(value):
-    driver, driven = setList()
+    number, driver, driven = setList()
     print("driver : ", driver)
     print("driven : ", driven)
-    cmds.parentConstraint(driver, driven, mo = value)
+    for index in range(number):
+        cmds.parentConstraint(driver[index], driven[index], mo = value)
+    
     return
 
 
 def pointConst(value):
-    driver, driven = setList()
+    number, driver, driven = setList()
     print("driver : ", driver)
     print("driven : ", driven)
-    cmds.pointConstraint(driver, driven, mo = value)
+    for index in range(number):
+        cmds.pointConstraint(driver, driven, mo = value)
+    
     return
 
 
 def orientConst(value):
-    driver, driven = setList()
+    number, driver, driven = setList()
     print("driver : ", driver)
     print("driven : ", driven)
-    cmds.orientConstraint(driver, driven, mo = value)
+    for index in range(number):
+        cmds.orientConstraint(driver, driven, mo = value)
+    
     return
 
 
 def scaleConst(value):
-    driver, driven = setList()
+    number, driver, driven = setList()
     print("driver : ", driver)
     print("driven : ", driven)
-    cmds.scaleConstraint(driver, driven, mo = value)
+    for index in range(number):
+        cmds.scaleConstraint(driver, driven, mo = value)
+    
     return
 
